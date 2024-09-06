@@ -14,7 +14,9 @@ Cliente> y TreeSet. Recuerde el uso de: Iterator y keySet()
 package entiies;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,7 +25,7 @@ import java.util.TreeMap;
 public class DirectorioTelefonico  {
     
     private TreeMap <  Long , Contacto > contactoTreeMap ;
-    private Long numeroTel;
+   // private Long numeroTel;
 
     public DirectorioTelefonico() {
       
@@ -35,18 +37,23 @@ public class DirectorioTelefonico  {
         return contactoTreeMap;
     }
 
-    public Long getNumeroTel() {
-        return numeroTel;
-    }
+    
 
    
     /* A. agregarContacto() que permite registrar un nuevo contacto con su respectivo nro. de teléfono. Siendo el nro.
 del teléfono la clave del mismo. */
     
-    public void agregarContacto(Contacto contact , Long tel) {
+    public void agregarContacto( Long tel, Contacto contact ) {
         
         contactoTreeMap.put(tel, contact);
-        
+
+        if (contactoTreeMap.containsKey(tel)) {
+            JOptionPane.showMessageDialog(null, " Contacto Agregado Correctamente");
+        } else {
+            JOptionPane.showMessageDialog(null, " Contacto ya se encuentra Agendado");
+
+        }
+
     }
     
     
@@ -54,17 +61,35 @@ del teléfono la clave del mismo. */
     
     public Contacto buscarContacto( Long tel) {
   
-        for (Map.Entry<Long, Contacto> entry : contactoTreeMap.entrySet()) {
-            Object key = entry.getKey();
-            Object val = entry.getValue();
-            
-            if(key.equals(val)){
-                return entry.getValue();
+
+         for (Map.Entry<Long, Contacto> telefonoMap : contactoTreeMap.entrySet())
+        {
+ 
+            if (Objects.equals(telefonoMap.getKey(), tel)) {
+                    return telefonoMap.getValue();
             }
-            
-            
         }
-    return null;
+        return null; 
+
     }
+
+    @Override
+    public String toString() {
+       
+          StringBuilder sb= new StringBuilder();
+        for(Map.Entry<Long, Contacto> setToStringMapContacto : contactoTreeMap.entrySet()){
+            sb.append
+            ("Telefono: ").append
+            (setToStringMapContacto.getKey()).append
+            (" ").append
+            ("Contacto: ").append
+            (setToStringMapContacto.getValue()).append
+            ("\n");
+        }
+        return sb.toString();
+        
+        
+    }
+    
     
 }
