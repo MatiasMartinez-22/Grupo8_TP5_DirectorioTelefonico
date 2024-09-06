@@ -6,7 +6,10 @@ package view;
 
 import java.awt.Color;
 import entiies.*;
+import java.awt.Component;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 /**
@@ -304,16 +307,53 @@ public class View extends javax.swing.JFrame {
         jDesktop.removeAll();
         jDesktop.repaint();
         
-         long telefono = Long.parseLong(jtPhone.getText());
-        Contacto contactos= directorioJFrame.buscarContacto(telefono);
+        //toma los valores de los textfield
         
-        BuscarView buscarVista = new BuscarView( contactos);
-        buscarVista.setVisible(true);
         
-        jDesktop.add(buscarVista);
-        jDesktop.moveToFront(buscarVista);
+//        String dniS = jtDni.getText();
+//        String nombre = jtName.getText();
+//        String apellido = jtLastName.getText();
+//        String ciudad = jtCity.getText();
+//        String direccion = jtAdress.getText();
+//        Integer dni = Integer.parseInt(dniS);
         
-       
+                //TEST
+//               String telefonoS =jtPhone.getText();
+//               Long telefono = Long.parseLong(telefonoS);
+               //TEST
+               
+      //  Long telefono = Long.parseLong(jtPhone.getText());
+
+        //Para que este boton funcione como omni boton va a preguntar si en los texfield estan vacios si no esta vacio realiza ese tipo de busqueda
+        //Contacto contactos = null;
+        if (! jtPhone.getText().isEmpty() ) {
+            String telefonoS =jtPhone.getText();
+               Long telefono = Long.parseLong(telefonoS);
+            Contacto contactos = directorioJFrame.buscarContacto(telefono);
+            //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
+            BuscarView buscarVista = new BuscarView(contactos);
+            buscarVista.setVisible(true);
+
+            jDesktop.add(buscarVista);
+            jDesktop.moveToFront(buscarVista);
+        }//else if (! jtCity.getText().isEmpty()){
+//         
+//                //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda 
+//                         JOptionPane.showMessageDialog(this, "Hay que implentar la busqueda por ciudad y las demas", "Error", JOptionPane.WARNING_MESSAGE);
+//
+//         }
+
+        //SE PODRIA MEJORAR ARMANDO UN METODO CON INSTANCEOF CREO JAJA
+        
+                    //TEST
+//        Contacto contactos = directorioJFrame.buscarContacto(telefono);
+//
+//        BuscarView buscarVista = new BuscarView( contactos);
+//        buscarVista.setVisible(true);
+//        
+//        jDesktop.add(buscarVista);
+//        jDesktop.moveToFront(buscarVista);
+            //TEST
        
         
     }//GEN-LAST:event_jbSearchActionPerformed
@@ -393,4 +433,37 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField jtName;
     private javax.swing.JTextField jtPhone;
     // End of variables declaration//GEN-END:variables
+
+  /*  private void omniBoton(JPanel jpanel){
+        
+       //Para mejorar con instanceof busca que textfield tiene algo y segun ese el boton buscar va a hacer una determinada busqueda , deberia devolver un valor string para mandarlo un swtich    
+        
+        for(Component c : jpanel.getComponents()){
+            
+            if (c  instanceof  JTextField) {
+                
+            String dniS=jtDni.getText();
+            String nombre= jtName.getText();
+            String apellido = jtLastName.getText();
+            String ciudad = jtCity.getText();
+            String direccion=jtAdress.getText();
+            String telefonoS =jtPhone.getText();
+            Integer dni = Integer.parseInt(dniS);
+            Long telefono = Long.parseLong(telefonoS);
+            
+            
+                
+                JTextField caja= (JTextField ) c ;
+                
+               // caja.getText()
+                
+                caja.setText("");
+                
+           }
+            
+        }
+        
+    }*/
+
 }
+
