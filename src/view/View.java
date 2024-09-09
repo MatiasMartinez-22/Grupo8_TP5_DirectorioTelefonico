@@ -352,7 +352,7 @@ public class View extends javax.swing.JFrame {
          
                 //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda  buscarContactos
                     String ciudad = jtCity.getText();
-
+              //NECESITA UN ARRAY
             Contacto contactos = directorioJFrame.buscarContactos(ciudad);
             //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
             BuscarView buscarVista = new BuscarView(contactos);
