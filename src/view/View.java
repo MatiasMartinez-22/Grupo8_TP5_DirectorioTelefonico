@@ -148,6 +148,11 @@ public class View extends javax.swing.JFrame {
 
         jbNew.setForeground(new java.awt.Color(0, 153, 153));
         jbNew.setText("NUEVO");
+        jbNew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbNewActionPerformed(evt);
+            }
+        });
 
         jbSave.setForeground(new java.awt.Color(0, 153, 153));
         jbSave.setText("GUARDAR");
@@ -159,9 +164,19 @@ public class View extends javax.swing.JFrame {
 
         jbDelete.setForeground(new java.awt.Color(0, 153, 153));
         jbDelete.setText("BORRAR");
+        jbDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbDeleteActionPerformed(evt);
+            }
+        });
 
         jbExit.setForeground(new java.awt.Color(0, 153, 153));
         jbExit.setText("SALIR");
+        jbExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExitActionPerformed(evt);
+            }
+        });
 
         jbSearch.setForeground(new java.awt.Color(0, 153, 153));
         jbSearch.setText("BUSCAR");
@@ -181,34 +196,31 @@ public class View extends javax.swing.JFrame {
                         .addGap(0, 4, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)
+                            .addComponent(jtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(jtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(17, 17, 17)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jtCity, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtName, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jbDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jbNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(30, 30, 30)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jbSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jbExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jbSearch)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jbDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jbSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addComponent(jbSearch)))
                 .addGap(18, 18, 18)
                 .addComponent(jDesktop)
                 .addContainerGap())
@@ -328,7 +340,7 @@ public class View extends javax.swing.JFrame {
         //Contacto contactos = null;
         if (! jtPhone.getText().isEmpty() ) {
             String telefonoS =jtPhone.getText();
-               Long telefono = Long.parseLong(telefonoS);
+            Long telefono = Long.parseLong(telefonoS);
             Contacto contactos = directorioJFrame.buscarContacto(telefono);
             //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
             BuscarView buscarVista = new BuscarView(contactos);
@@ -336,12 +348,20 @@ public class View extends javax.swing.JFrame {
 
             jDesktop.add(buscarVista);
             jDesktop.moveToFront(buscarVista);
-        }//else if (! jtCity.getText().isEmpty()){
-//         
-//                //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda 
-//                         JOptionPane.showMessageDialog(this, "Hay que implentar la busqueda por ciudad y las demas", "Error", JOptionPane.WARNING_MESSAGE);
-//
-//         }
+        }else if (! jtCity.getText().isEmpty()){
+         
+                //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda  buscarContactos
+                    String ciudad = jtCity.getText();
+
+            Contacto contactos = directorioJFrame.buscarContactos(ciudad);
+            //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
+            BuscarView buscarVista = new BuscarView(contactos);
+            buscarVista.setVisible(true);
+
+            jDesktop.add(buscarVista);
+            jDesktop.moveToFront(buscarVista);        
+
+         }
 
         //SE PODRIA MEJORAR ARMANDO UN METODO CON INSTANCEOF CREO JAJA
         
@@ -375,6 +395,31 @@ public class View extends javax.swing.JFrame {
          JOptionPane.showMessageDialog(this, "DNI y Telefono solo aceptan valores numericos", "Error", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jbSaveActionPerformed
+
+    private void jbNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNewActionPerformed
+        // TODO add your handling code here:
+        jtDni.setText("");
+        jtName.setText("");
+        jtLastName.setText("");
+        jtCity.setText("");
+        jtAdress.setText("");
+        jtPhone.setText("");
+    }//GEN-LAST:event_jbNewActionPerformed
+
+    private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
+        // TODO add your handling code here:
+                dispose();
+
+        
+    }//GEN-LAST:event_jbExitActionPerformed
+
+    private void jbDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbDeleteActionPerformed
+        // TODO add your handling code here: 
+     
+           Long telefono = Long.parseLong(jtPhone.getText());
+        directorioJFrame.borrarContacto(telefono);
+        
+    }//GEN-LAST:event_jbDeleteActionPerformed
 
     /**
      * @param args the command line arguments

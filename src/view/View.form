@@ -60,42 +60,37 @@
                           <EmptySpace min="0" pref="4" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" pref="236" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel4" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="jtLastName" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtCity" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jtName" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jtAdress" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtPhone" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jtDni" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" pref="102" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel4" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <Component id="jtLastName" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jtCity" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jtName" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jtAdress" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jtPhone" alignment="0" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jtDni" min="-2" pref="198" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jbDelete" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jbNew" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jbSave" max="32767" attributes="0"/>
-                                              <Component id="jbExit" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jbDelete" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jbNew" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jbSave" max="32767" attributes="0"/>
+                                      <Component id="jbExit" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                                  <Component id="jbSearch" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                          <Component id="jbSearch" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -289,6 +284,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="NUEVO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbNewActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbSave">
           <Properties>
@@ -308,6 +306,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="BORRAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbDeleteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbExit">
           <Properties>
@@ -316,6 +317,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SALIR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbExitActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbSearch">
           <Properties>
