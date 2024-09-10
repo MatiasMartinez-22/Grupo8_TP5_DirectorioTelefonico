@@ -7,6 +7,10 @@ package view;
 import java.awt.Color;
 import entiies.*;
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -26,10 +30,9 @@ public class View extends javax.swing.JFrame {
      */
     public View() {
         initComponents();
-        setLocationRelativeTo(null);
 
         jPanel1.setBackground(Color.DARK_GRAY);
-
+        
     }
 
     /**
@@ -66,18 +69,22 @@ public class View extends javax.swing.JFrame {
         setTitle("FORMULARIO ");
         setAutoRequestFocus(false);
         setForeground(java.awt.Color.white);
+        setMaximumSize(new java.awt.Dimension(550, 550));
 
         jPanel1.setToolTipText("");
+        jPanel1.setAutoscrolls(true);
+        jPanel1.setMaximumSize(new java.awt.Dimension(550, 550));
+        jPanel1.setName(""); // NOI18N
 
         javax.swing.GroupLayout jDesktopLayout = new javax.swing.GroupLayout(jDesktop);
         jDesktop.setLayout(jDesktopLayout);
         jDesktopLayout.setHorizontalGroup(
             jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 629, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
         jDesktopLayout.setVerticalGroup(
             jDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 695, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -193,7 +200,7 @@ public class View extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 4, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
@@ -230,44 +237,44 @@ public class View extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDesktop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDesktop)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(22, 22, 22)
-                        .addComponent(jtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtName)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtLastName)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtDni)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(16, 16, 16)
-                        .addComponent(jtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtCity)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jtAdress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtAdress)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jtPhone)
                         .addGap(32, 32, 32)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbNew)
-                            .addComponent(jbSave))
+                            .addComponent(jbNew, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jbDelete)
-                            .addComponent(jbExit))
+                            .addComponent(jbDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
-                        .addComponent(jbSearch)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                        .addComponent(jbSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,10 +288,7 @@ public class View extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -341,27 +345,53 @@ public class View extends javax.swing.JFrame {
         if (! jtPhone.getText().isEmpty() ) {
             String telefonoS =jtPhone.getText();
             Long telefono = Long.parseLong(telefonoS);
+            
             Contacto contactos = directorioJFrame.buscarContacto(telefono);
+            ArrayList <Contacto> contactoArray= new ArrayList<Contacto>();
+            contactoArray.add(contactos);
+            //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
+            BuscarView buscarVista = new BuscarView(contactoArray);
+            buscarVista.setVisible(true);
+
+            jDesktop.add(buscarVista);
+            jDesktop.moveToFront(buscarVista);
+        } else if (!jtCity.getText().isEmpty()) {
+
+            //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda  buscarContactos
+            String ciudad = jtCity.getText();
+            //NECESITA UN ARRAY
+            ArrayList<Contacto> contactos = directorioJFrame.buscarContactos(ciudad);
             //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
             BuscarView buscarVista = new BuscarView(contactos);
             buscarVista.setVisible(true);
 
             jDesktop.add(buscarVista);
             jDesktop.moveToFront(buscarVista);
-        }else if (! jtCity.getText().isEmpty()){
-         
-                //ACA PUEDE REALIZAR LA BUSQUEDA POR CIUDAD POR EJEMPLO e ir anidando IF con sus tipos de busqueda  buscarContactos
-                    String ciudad = jtCity.getText();
-              //NECESITA UN ARRAY
-            Contacto contactos = directorioJFrame.buscarContactos(ciudad);
-            //agrega a conctacto la busqueda por telefono para luego ser mostrada en la tabla
-            BuscarView buscarVista = new BuscarView(contactos);
+
+        } else if (!jtLastName.getText().isEmpty()) {
+            String apellido = jtLastName.getText();
+            ArrayList<Contacto> contactoArray = new ArrayList<Contacto>();
+            HashSet<Long> setLong = directorioJFrame.buscarTelefono(apellido);
+            
+            for (Long long1 : setLong) {
+                
+                contactoArray.add(directorioJFrame.buscarContacto(long1));
+                
+            }
+            
+//            for (Iterator<Long> iterator = setLong.iterator(); iterator.hasNext();) {
+//                Long next = iterator.next();
+//                contactoArray.add(directorioJFrame.buscarContacto(iterator.next()));
+//
+//            }
+
+            BuscarView buscarVista = new BuscarView(contactoArray);
             buscarVista.setVisible(true);
 
             jDesktop.add(buscarVista);
-            jDesktop.moveToFront(buscarVista);        
+            jDesktop.moveToFront(buscarVista);
 
-         }
+        }
 
         //SE PODRIA MEJORAR ARMANDO UN METODO CON INSTANCEOF CREO JAJA
         

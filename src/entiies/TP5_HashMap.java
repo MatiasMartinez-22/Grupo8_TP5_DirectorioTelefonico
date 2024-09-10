@@ -39,7 +39,7 @@ public class TP5_HashMap {
         System.out.println(directorioObj.buscarContacto(telefono1));
         System.out.println(" ");
         System.out.println("BUSCAR POR APELLIDO");
-        System.out.println(directorioObj.buscarTeléfono("Cepeda"));
+        System.out.println(directorioObj.buscarTelefono("Cepeda"));
         System.out.println(" ");
          System.out.println("BUSCAR POR CIUDAD.");
         String ciudad="San Luis";

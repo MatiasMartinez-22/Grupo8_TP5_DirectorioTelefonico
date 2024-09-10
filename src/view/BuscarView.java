@@ -5,6 +5,7 @@
 package view;
 
 import entiies.*;
+import java.util.ArrayList;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -15,13 +16,15 @@ import javax.swing.table.DefaultTableModel;
 public class BuscarView extends javax.swing.JInternalFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
-        Contacto contactoDeView;
+        DirectorioTelefonico directorioJFrame= new DirectorioTelefonico();
+
+        ArrayList<Contacto> contactoDeView;
 
     /**
      * Creates new form BuscarView
      * @param contactoDeView
      */
-    public BuscarView(   Contacto contactoDeView ) {
+    public BuscarView(   ArrayList<Contacto> contactoDeView ) {
         initComponents();
         this.contactoDeView= contactoDeView;
         armarCabecera();
@@ -113,12 +116,24 @@ public class BuscarView extends javax.swing.JInternalFrame {
         
     }
     
-    private void cargarDatos( Contacto contactoDeView ){
-        modelo.addRow(new Object  [] { contactoDeView.getNombre() 
-                                                        , contactoDeView.getApellido() 
-                                                         , contactoDeView.getDni() 
-                                                        , contactoDeView.getCiudad() 
-                                                       , contactoDeView.getDireccion() });
+    private void cargarDatos( ArrayList<Contacto> contactoDeView ){
+        
+        for (Contacto contacto : contactoDeView) {
+            
+             modelo.addRow(new Object  [] { contacto.getNombre() 
+                                                        , contacto.getApellido() 
+                                                         , contacto.getDni() 
+                                                        , contacto.getCiudad() 
+                                                       , contacto.getDireccion()
+                                                                             ,directorioJFrame.buscarContactos( contacto.getCiudad())
+                                                    
+                  
+
+             });
+            
+        }
+        
+       
         
     }
     

@@ -12,6 +12,7 @@ Cliente> y TreeSet. Recuerde el uso de: Iterator y keySet()
 package entiies;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
@@ -57,7 +58,7 @@ del teléfono la clave del mismo. */
 
     }
     
-    
+    //
     /*B. buscarContacto() que en base al nro. de teléfono retorna el Contacto asociado al mismo.*/
     
     public Contacto buscarContacto( Long tel) {
@@ -76,14 +77,15 @@ del teléfono la clave del mismo. */
     
     /* // C. buscarTeléfono() que en base a un apellido nos devuelve un Set<Long> con los números de teléfono asociados
 a dicho apellido.*/
-    public Set<Long> buscarTeléfono(String apellido) {
-        Set<Long> telefonos = new TreeSet<>();
-        for (Map.Entry<Long, Contacto> entry : contactoTreeMap.entrySet()) {
-            if (entry.getValue().getApellido().equalsIgnoreCase(apellido)) {
-                telefonos.add(entry.getKey());
+    public HashSet<Long> buscarTelefono(String apellido) {
+        HashSet<Long> setLong=new HashSet();
+        for (Map.Entry<Long, Contacto> telefonoMap : contactoTreeMap.entrySet())
+        {
+            if (telefonoMap.getValue().getApellido().equalsIgnoreCase(apellido)) {
+                    setLong.add(telefonoMap.getKey());
             }
         }
-        return telefonos;
+        return setLong; 
     }
 
    /* D. buscarContactos() que en base a una ciudad nos devuelve un ArrayList con los Contactos asociados a dicha ciudad.*/
